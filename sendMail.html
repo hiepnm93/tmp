@@ -1,0 +1,30 @@
+<html>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+
+<form>
+email: <input id='email'/>
+Subject: <input id='subject'/>
+Body: <input id='body'/>
+<button onclick="sendMail()">send</button>
+</form>
+
+
+<script>
+function sendMail() {
+	var email = document.getElementById("email").value;
+	var subject = document.getElementById("subject").value;
+	var body = document.getElementById("body").value;
+	Email.send({
+		SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
+		To : email,
+		From : "me@khongan.com",
+		Subject : subject,
+		Body : body
+	}).then(
+	  message => alert(message)
+	);
+}
+</script>
+
+</html>
